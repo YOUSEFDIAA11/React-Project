@@ -1,9 +1,3 @@
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import card_1 from '../../assets/card_1.jpg';
 import './Card.css';
 
@@ -11,33 +5,26 @@ const cards = [1, 2, 3, 4, 5, 6];
 
 export default function CustomCard() {
   return (
-    <>
-    <div className='cards-container'>
-  {cards.map((card) =>  (
-    <Card className='card' key={card} sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image= {card_1}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-    
-  ))}
-</div>
-    </>
+    <div className="cards-container">
+      {cards.map((card) => (
+        <div className="card" key={card}>
+          <img
+            src={card_1}
+            alt="green iguana"
+            height="140"
+          />
+
+          <div className="card-content">
+            <h2>Lizard</h2>
+
+            <p>
+              Lizards are a widespread group of squamate reptiles,
+              with over 6,000 species, ranging across all continents
+              except Antarctica
+            </p>
+          </div>      
+        </div>
+      ))}
+    </div>
   );
 }

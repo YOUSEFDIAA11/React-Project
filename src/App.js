@@ -1,37 +1,25 @@
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import Container from './Components/Container/Container';
 import Footer from './Components/Footer/Footer';
-import CustomCard from './Components/Card/Card';
-import Features from './Components/Features/Features';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from './About/About';
-
+import About from './Components/About/About';
+import Home from './Home';
 
 function App() {
   return (
     <div className="App">
-    <BrowserRouter>
-      <Navbar />
+      <BrowserRouter>
+        <Navbar />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Container>
-              <CustomCard />
-              <Features />
-            </Container>
-          }
-        />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
 
-        <Route path="/about" element={<About />} />
-      </Routes>
-
-      <Footer />
-    </BrowserRouter>
-  </div>
-);
+        <Footer />
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
